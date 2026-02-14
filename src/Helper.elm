@@ -10,8 +10,8 @@ listLanguages =
     ]
 
 
-languagesName : List { name : String, releaseYear : Int, currentVersion : String } -> List String
-languagesName list =
+languageNames : List { name : String, releaseYear : Int, currentVersion : String } -> List String
+languageNames list =
     List.map (\lang -> lang.name) list
 
 
