@@ -31,7 +31,7 @@ languages =
 
 languageNames : List { name : String, releaseYear : Int, currentVersion : String } -> List String
 languageNames list =
-    List.map (\lang -> lang.name) list
+    List.map .name list
 
 
 
@@ -90,7 +90,7 @@ videogames =
 
 getVideogameGenres : List Videogame -> List (List String)
 getVideogameGenres list =
-    List.map (\game -> game.genres) list
+    List.map .genres list
 
 
 
