@@ -1,7 +1,5 @@
 module Helper exposing (..)
 
--- Exercise 1.0 Languages
-
 
 languages : List { name : String, releaseYear : Int, currentVersion : String }
 languages =
@@ -13,10 +11,6 @@ languages =
 languageNames : List { name : String, releaseYear : Int, currentVersion : String } -> List String
 languageNames list =
     List.map (\lang -> lang.name) list
-
-
-
--- Exercise 2.0 Users
 
 
 users : List { name : String, uType : String }
@@ -37,10 +31,6 @@ onlyStudents list =
                 ""
         )
         list
-
-
-
--- Exercise 3.0 Videogames
 
 
 type alias Videogame =
