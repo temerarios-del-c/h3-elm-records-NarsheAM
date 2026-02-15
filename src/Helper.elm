@@ -18,34 +18,36 @@ calc int1 int2 operator =
     operator int1 int2
 
 
-
---- Exercise 1.0 Languages
-
-
-languageNames : List { name : String, releaseYear : Int, currentVersion : String } -> List String
-languageNames list =
-    List.map .name list
+type alias Language =
+    { name : String
+    , releaseYear : Int
+    , currentVersion : String
+    }
 
 
+languageNames : List Language -> List String
+languageNames languages =
+    List.map .name languages
 
---- Exercise 2.0 Users
+
+type alias User =
+    { name : String
+    , uType : String
+    }
 
 
-onlyStudents : List { name : String, uType : String } -> List String
-onlyStudents list =
+onlyStudents : List User -> List String
+onlyStudents users =
     List.map
         (\user ->
-            if user.uType == "Student" then
-                user.uType
+            case .uType user of
+                "Student" ->
+                    .name user
 
-            else
-                ""
+                _ ->
+                    ""
         )
-        list
-
-
-
---- Exercise 3.0 Videogames
+        users
 
 
 type alias Videogame =
@@ -57,30 +59,9 @@ type alias Videogame =
     }
 
 
-videogames : List Videogame
-videogames =
-    [ { title = "Control"
-      , releaseYear = 2019
-      , available = True
-      , downloads = 1000000
-      , genres = [ "Action", "Shooter" ]
-      }
-    , { title = "Ocarina of Time"
-      , releaseYear = 1998
-      , available = True
-      , downloads = 5000000
-      , genres = [ "Action", "Adventure" ]
-      }
-    ]
-
-
 getVideogameGenres : List Videogame -> List (List String)
-getVideogameGenres list =
-    List.map .genres list
-
-
-
---- Homework
+getVideogameGenres videogames =
+    List.map .genres videogames
 
 
 type alias Computer =
@@ -95,7 +76,7 @@ myLaptop : Computer
 myLaptop =
     { ram = "24GB DDR5"
     , model = "IdeaPad Slim 3"
-    , brand = "LENOVO"
+    , brand = "Lenovo"
     , screenSize = "15.6in"
     }
 
