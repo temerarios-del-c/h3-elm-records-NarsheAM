@@ -3,8 +3,8 @@ module Helper exposing (..)
 -- Exercise 1.0 Languages
 
 
-listLanguages : List { name : String, releaseYear : Int, currentVersion : String }
-listLanguages =
+languages : List { name : String, releaseYear : Int, currentVersion : String }
+languages =
     [ { name = "Elm", releaseYear = 2012, currentVersion = "0.19.1" }
     , { name = "JavaScript", releaseYear = 1995, currentVersion = "ECMAScript 2025" }
     ]
@@ -19,8 +19,8 @@ languageNames list =
 -- Exercise 2.0 Users
 
 
-listUsers : List { name : String, uType : String }
-listUsers =
+users : List { name : String, uType : String }
+users =
     [ { name = "Roberto", uType = "Student" }
     , { name = "Mitsui", uType = "Professor" }
     ]
