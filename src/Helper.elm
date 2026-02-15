@@ -22,13 +22,6 @@ calc int1 int2 operator =
 --- Exercise 1.0 Languages
 
 
-languages : List { name : String, releaseYear : Int, currentVersion : String }
-languages =
-    [ { name = "Elm", releaseYear = 2012, currentVersion = "0.19.1" }
-    , { name = "JavaScript", releaseYear = 1995, currentVersion = "ECMAScript 2025" }
-    ]
-
-
 languageNames : List { name : String, releaseYear : Int, currentVersion : String } -> List String
 languageNames list =
     List.map .name list
@@ -36,13 +29,6 @@ languageNames list =
 
 
 --- Exercise 2.0 Users
-
-
-users : List { name : String, uType : String }
-users =
-    [ { name = "Roberto", uType = "Student" }
-    , { name = "Mitsui", uType = "Professor" }
-    ]
 
 
 onlyStudents : List { name : String, uType : String } -> List String
